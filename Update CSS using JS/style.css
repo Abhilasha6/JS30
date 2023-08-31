@@ -1,0 +1,21 @@
+:root{
+    --blur:10px;
+    --spacing: 25px
+    --base: blue;
+}
+.controls{
+    margin: 25px;
+}
+img{
+    padding: var(--spacing);
+filter: blur(var(--blur));
+background: var(--base);
+height: 250px;
+width: 250px;
+}
+.h1{
+    background: var(--base);
+}
+body{
+    text-align: center;
+}
