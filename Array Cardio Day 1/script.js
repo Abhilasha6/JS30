@@ -16,7 +16,9 @@ const people = [
     'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
   ];
 
-//   const fifteen = inventors.filter(function(inventor){
+  //other ways to define the const 
+    //   const fifteen = inventors.filter(function(inventor){
+    // const fifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year <1600)
     const fifteen = inventors.filter(inventor => {
     if(inventor.year >= 1500 && inventor.year <1600)
     {
@@ -24,3 +26,21 @@ const people = [
     }
   });
   console.table(fifteen); //display the invetors satisfying the above condition in a table
+
+//map function
+// give an array of the inventory first & last names
+const fullname = inventors.map( inventor => inventors.first+' '+ inventors.last);
+console.table(fullname);
+
+//sort function by year
+const ordered = inventors.sort(function(a,b){
+    if(a.year > b.year) return 1;
+    else return -1;
+});
+console.table(ordered);
+
+//reduce function
+//how many years did all inventors live
+const total=inventors.reduce((total, inventor)=>{
+    return total +(inventor.passed - inventor.year);
+},0);
