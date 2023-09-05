@@ -97,11 +97,11 @@ console.table(oldest);
 // link:  https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 // to get the dom elements from the site go to inspect element & then find where the links are: .mw-category in this case
 
-const category = document.querySelector(".mw-category");
-const links = category.querySelectorAll("a");
-const de = links
-  .map((link) => link.textContent)
-  .filter((streetName) => streetName.includes("de"));
+// const category = document.querySelector('.mw-category');
+// const links = category.querySelectorAll('a');
+// const de = links
+//   .map((link) => link.textContent)
+//   .filter((streetName) => streetName.includes('de'));
 
 //sort by people last name
 const alpha = people.sort(function (lastone, nextone) {
