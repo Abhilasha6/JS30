@@ -1,0 +1,91 @@
+html{
+    box-sizing: border-box;
+    background: #a74313;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+body {
+    margin: 0;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+.panels{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+.panel{
+    background: #abc134;
+    box-shadow: inset0 0 0 0 5px rgba(red, green, blue, 0.1);
+    color: white;
+    text-align: center;
+    align-items: center;
+    transition: 
+    font-size 0.7s cubic-bezier(0.61,-0.19,0.7, -0.11),
+    flex 0.7s cubic-bezier(0.61,-0.19,0.7, -0.11),
+    background 0.2s;
+    font-size: 20px;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    /*  evenly distribute the items in flexbox */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.panel1{
+    background-image: url(./assets/eugene-golovesov-2VJ-lj-Vq80-unsplash.jpg);
+}
+.panel2{
+    background-image: url(./assets/fabio-sasso-UgpCjt4XLTY-unsplash.jpg);
+}
+.panel3{
+    background-image: url(./assets/marlon-medau-TFg35jn95OU-unsplash.jpg);
+}
+.panel4{
+    background-image: url(./assets/nicolas-lobos-kGtFjYdm7DI-unsplash.jpg);
+}
+.panel5{
+    background-image: url(./assets/pawel-czerwinski-fOM8sjZ_cQk-unsplash.jpg);
+}
+.panel>*{
+    margin: 0;
+    width: 100%;
+    transition: trasform 0.5s;
+    border: 1px solid pink;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.panel>*:first-child{
+    transform: translate(-100%);
+}
+.panel.open-active >*:first-child{ transform: translateY(0);}
+.panel>*:last-child{
+    transform: translate(0);
+}
+.panel.open-active >*:last-child{ transform: translateY(0);}
+.panel p{
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72) 0 0 14px rgba(0, 0, 0, 0.45);
+    font-size: 2em;
+}
+.panel p:nth-child(2)
+{
+    font-size: 4em;
+}
+.panel .open{
+    font-size: 40px;
+    flex: 5;
+    /* it means when class is room, take 5 times more space */
+}
+.cta{
+    color: white;
+    text-decoration: none;
+}
