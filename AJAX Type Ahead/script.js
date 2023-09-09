@@ -2,13 +2,14 @@ const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb
 
 const cities=[];
 
-fetch(endpoint)
- .then(blob => blob.json())
- .then(data => cities.push(...data));
+fetch(endpoint) // returns a promise
+ .then(blob => blob.json()) //convert the raw data into json file
+ .then(data => cities.push(...data)); //change the entire data into array by spreading the function
 
 function findMatches(wordToMatch, cities) {
 return cities.filter(place =>{
-    const regex = new RegExp(wordToMatch,'gi');
+    //find any related match if found
+    const regex = new RegExp(wordToMatch,'gi'); // look  gor global insensitive match of input city/ state
     return place.city.match(regex) || place.state.match(regex);
 });
 }
@@ -29,7 +30,7 @@ function displayMatches(){
         <span class="name">${cityName}, ${stateName}</span>
         <span class="population">${numberWithCommas(place.population)}</span>
 </li>`;
-    }).join('');
+    }).join(''); // turns huge array to single string
     suggestions.innerHTML= html;
 }
 
