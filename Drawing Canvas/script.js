@@ -10,8 +10,7 @@ context.lineWidth = 10;
 context.globalCompositionOperation = "multiply";
 
 let isDrawing = false; // aflag to check whether someone is drawing on the canvas or just movinf the mouse over it
-let lastx = 0,
-  lasty = 0; //gives the cordinates of the lines you drew
+let lastx = 0, lasty = 0; //gives the cordinates of the lines you drew
 let hue = 0;
 let dir = true;
 
@@ -30,7 +29,7 @@ function draw(e) {
   hue++;
   if(hue>=360)// default reset value for hsl spectrum
   hue=0;
-  if (context.lineWidth >= 250 || context.lineHeight <= 1) dir = !dir;
+  if (context.lineWidth >= 100 || context.lineWidth <= 1) dir = !dir;
 
   if (dir) context.lineWidth++;
   else context.lineWidth--;
