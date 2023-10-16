@@ -1,12 +1,13 @@
 html {
     font-family: sans-serif;
-    background: #ffc600;
+    /* give background opacity */
+    background-image:url(brian-breeden-HKI37SdkxA4-unsplash.jpg);
   }
 
   .inbox {
     max-width: 400px;
     margin: 50px auto;
-    background: white;
+    background: rgb(185, 132, 221);
     border-radius: 5px;
     box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
   }
