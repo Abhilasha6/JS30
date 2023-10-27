@@ -34,17 +34,28 @@ function handleRangeUpdate(){
 }
 
 //progress bar of video
-function handleProgress(){
-  const progresspercent = (video.currentTime/video.duration) * 100;
-  progressBar.style.flexBasis = `${progresspercent}%`;
-}
-//play the video from where it was clicked
-function scrub(e){
-  const scrubtime = (e.offsetX/progress.offsetWidth)*video.duration;
-  video.duration=scrubtime;
-console.log(e);
-}
+// function handleProgress(){
+//   const progresspercent = (video.currentTime/video.duration) * 100;
+//   progressBar.style.flexBasis = `${progresspercent}%`;
+// }
+// //play the video from where it was clicked
+// function scrub(e){
+//   const scrubtime = (e.offsetX/progress.offsetWidth)*video.duration;
+//   video.duration=scrubtime;
+// console.log(e);
+// }
 //drag the progress bar & change the video content accordingly
+function handleProgress() {
+  const percent = (video.currentTime / video.duration) * 100;
+  progressBar.style.flexBasis = `${percent}%`;
+}
+
+function scrub(e) {
+  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = scrubTime;
+}
+
+
 
 video.addEventListener('click', togglePlay);
 video.addEventListener('play',updateButton);
